@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FYPDeadReckoning">
+
+        <property
+            android:name="android.app.PROPERTY_HIGH_SAMPLING_RATE_SENSORS_USE_ATTRIBUTION"
+            android:value="Your app is tracking steps" />
+
+        <receiver
+            android:name=".helpers.location.GeofenceBroadcastReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.fypdeadreckoning.GEOFENCE_EVENT" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".activity.SetUpActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".activity.debuggers.StepCountTestActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".activity.debuggers.DirectionTestActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".activity.debuggers.MovementTestActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.debuggers.GroundTruthTestActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.debuggers.PeerAugmentationDummyUserActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.StrideLengthCalibrationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.debuggers.MagneticCompassCalibrationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.debuggers.GyroscopeCalibrationActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>

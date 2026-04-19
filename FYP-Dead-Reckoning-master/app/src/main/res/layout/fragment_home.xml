@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.home.HomeFragment"
+    android:background="?attr/colorPrimary">
+
+    <LinearLayout
+        android:id="@+id/topControlPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:layout_marginTop="24dp"
+        android:background="#CC000000"
+        android:elevation="8dp">
+
+        <!-- Buttons in a grid -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2">
+
+            <Button
+                android:id="@+id/upButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:text="Floor Up"
+                android:enabled="true"
+                android:backgroundTint="?attr/colorAccent"
+                android:textColor="?attr/colorOnSecondary"/>
+
+            <Button
+                android:id="@+id/downButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:text="Floor Down"
+                android:enabled="true"
+                android:backgroundTint="?attr/colorAccent"
+                android:textColor="?attr/colorOnSecondary"/>
+
+        </GridLayout>
+
+    </LinearLayout>
+
+    <com.example.fypdeadreckoning.ui.views.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/pinButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/topControlPanel"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="12dp"
+        android:src="@drawable/add_location_24px"
+        android:background="#99000000"
+        android:padding="8dp"
+        android:contentDescription="Toggle pin mode"
+        android:elevation="12dp" />
+
+    <ImageButton
+        android:id="@+id/analyticsToggleButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/topControlPanel"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:src="@android:drawable/ic_menu_info_details"
+        android:background="#99000000"
+        android:padding="8dp"
+        android:contentDescription="Toggle analytics overlay"
+        android:elevation="12dp" />
+
+    <include
+        layout="@layout/analytics_overlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topControlPanel"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="12dp"
+        android:elevation="12dp" />
+
+    <!-- Floating stats panel above bottom controls -->
+    <LinearLayout
+        android:id="@+id/statsPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomControlPanel"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="10dp"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginBottom="6dp"
+        android:background="@drawable/stats_panel_background"
+        android:elevation="8dp">
+
+        <TextView
+            android:id="@+id/uncertaintyLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Uncertainty"
+            android:textColor="#AAAAAA"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.08" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="2dp">
+
+            <TextView
+                android:id="@+id/uncertaintyValueText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-- m"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/confidenceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dash"
+                android:textColor="#AAAAAA"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- Progress bar showing uncertainty as fraction of max -->
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/uncertaintyProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:max="100"
+            android:progress="0"
+            app:indicatorColor="@color/green_500"
+            app:trackColor="#33FFFFFF"
+            app:trackThickness="8dp"
+            app:trackCornerRadius="4dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomControlPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:layout_marginBottom="48dp"
+        android:background="#CC000000"
+        android:elevation="8dp">
+
+        <!-- Buttons in a grid -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="2">
+
+            <Button
+                android:id="@+id/loadMapButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:text="Load Map"
+                android:backgroundTint="?attr/colorAccent"
+                android:textColor="?attr/colorOnSecondary"/>
+
+            <Button
+                android:id="@+id/startTrackingButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:text="Start Track"
+                android:enabled="true"
+                android:backgroundTint="?attr/colorAccent"
+                android:textColor="?attr/colorOnSecondary"/>
+
+            <Button
+                android:id="@+id/stopTrackingButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:text="Stop Track"
+                android:enabled="true"
+                android:backgroundTint="?attr/colorAccent"
+                android:textColor="?attr/colorOnSecondary"/>
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

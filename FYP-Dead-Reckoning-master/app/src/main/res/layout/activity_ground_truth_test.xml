@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="?attr/colorPrimary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ground Truth Test"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingBottom="16dp"
+            android:textColor="?attr/colorOnPrimary"/>
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Status: Ready"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingVertical="8dp"
+            android:background="?attr/colorPrimaryVariant"
+            android:paddingHorizontal="12dp"
+            android:textColor="?attr/colorOnPrimary"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Instructions:\n1. Set Point 1 (start position)\n2. Set Point 2 (end position)\n3. Start Test\n4. Walk from Point 1 to Point 2\n5. Record checkpoints as needed\n6. Finish Test"
+            android:textSize="14sp"
+            android:paddingVertical="12dp"
+            android:textColor="?attr/colorOnPrimary"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reference Points"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp"
+            android:textColor="?attr/colorOnPrimary"/>
+
+        <Button
+            android:id="@+id/setPoint1Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Set Point 1 (Origin)"
+            android:textAllCaps="false"
+            android:backgroundTint="?attr/colorAccent"
+            android:textColor="?attr/colorOnSecondary" />
+
+        <TextView
+            android:id="@+id/point1InfoText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Point 1: Not Set"
+            android:textSize="14sp"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="12dp"
+            android:background="#F5F5F5"
+            android:fontFamily="monospace"
+            android:textColor="?attr/colorOnPrimary"/>
+
+        <Button
+            android:id="@+id/setPoint2Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Set Point 2 (Target)"
+            android:layout_marginTop="8dp"
+            android:textAllCaps="false"
+            android:backgroundTint="?attr/colorAccent"
+            android:textColor="?attr/colorOnSecondary" />
+
+        <TextView
+            android:id="@+id/point2InfoText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Point 2: Not Set"
+            android:textSize="14sp"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="12dp"
+            android:background="#F5F5F5"
+            android:fontFamily="monospace"
+            android:textColor="?attr/colorOnPrimary"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorPrimaryVariant"
+            android:layout_marginVertical="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Test Controls"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp"
+            android:textColor="?attr/colorOnPrimary"/>
+
+        <Button
+            android:id="@+id/startTestButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start Test"
+            android:textAllCaps="false"
+            android:backgroundTint="?attr/colorAccent"
+            android:textColor="?attr/colorOnSecondary"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/recordCheckpointButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Record Checkpoint"
+                android:layout_marginEnd="4dp"
+                android:textAllCaps="false"
+                android:backgroundTint="?attr/colorAccent"
+                android:textColor="?attr/colorOnSecondary"/>
+
+            <Button
+                android:id="@+id/finishTestButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Finish Test"
+                android:layout_marginStart="4dp"
+                android:textAllCaps="false"
+                android:backgroundTint="?attr/colorAccent"
+                android:textColor="?attr/colorOnSecondary"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorPrimaryVariant"
+            android:layout_marginVertical="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Current Position"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp"
+            android:textColor="?attr/colorOnPrimary"/>
+
+        <TextView
+            android:id="@+id/currentPosText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GPS: N/A\nDR: (0.000, 0.000)\nSteps: 0\nDistance: 0.00m"
+            android:textSize="14sp"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="12dp"
+            android:background="#F5F5F5"
+            android:fontFamily="monospace"
+            android:textColor="?attr/colorOnPrimary"/>
+
+        <TextView
+            android:id="@+id/stepsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Steps: 0"
+            android:textSize="16sp"
+            android:paddingVertical="8dp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnPrimary"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorPrimaryVariant"
+            android:layout_marginVertical="8dp"/>
+
+        <!-- Error Metrics -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Error Metrics"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp"
+            android:textColor="?attr/colorOnPrimary"/>
+
+        <TextView
+            android:id="@+id/errorMetricsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Latest: N/A\nAverage: N/A\nCheckpoints: 0"
+            android:textSize="14sp"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="12dp"
+            android:background="#F5F5F5"
+            android:fontFamily="monospace"
+            android:textColor="?attr/colorOnPrimary"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorPrimaryVariant"
+            android:layout_marginVertical="8dp"/>
+
+        <!-- Actual Steps Input -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Actual Steps Taken (Manual Count)"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp"
+            android:textColor="?attr/colorOnPrimary"/>
+
+        <EditText
+            android:id="@+id/actualStepsInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter actual step count"
+            android:inputType="number"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorPrimaryVariant"
+            android:layout_marginVertical="8dp"/>
+
+        <!-- Test Results Display -->
+        <TextView
+            android:id="@+id/resultsDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="13sp"
+            android:paddingVertical="12dp"
+            android:paddingHorizontal="12dp"
+            android:background="#F5F5F5"
+            android:fontFamily="monospace"
+            android:textColor="?attr/colorOnPrimary"
+            android:visibility="gone"/>
+
+        <!-- New Test Button -->
+        <Button
+            android:id="@+id/newTestButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start New Test"
+            android:textAllCaps="false"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="?attr/colorAccent"
+            android:textColor="?attr/colorOnSecondary"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Results are displayed on screen above.\nYou can also check logcat for detailed logs."
+            android:textSize="12sp"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            android:textColor="#666666"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</ScrollView>

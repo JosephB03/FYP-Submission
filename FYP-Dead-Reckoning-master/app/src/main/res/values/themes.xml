@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.FYPDeadReckoning" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/muted_teal</item>
+        <item name="colorPrimaryVariant">@color/deep_teal</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/dark_slate_grey</item>
+        <item name="colorSecondaryVariant">@color/charcoal_blue</item>
+        <item name="colorOnSecondary">@color/ash_grey</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorSecondaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="colorAccent">@color/charcoal_blue</item>
+    </style>
+
+    <style name="SettingsSlider" parent="Widget.MaterialComponents.Slider">
+        <item name="thumbColor">@color/white</item>
+        <item name="trackColorActive">@color/white</item>
+        <item name="trackColorInactive">@color/deep_teal</item>
+        <item name="tickColorActive">@color/deep_teal</item>
+        <item name="tickColorInactive">@color/white</item>
+    </style>
+</resources>

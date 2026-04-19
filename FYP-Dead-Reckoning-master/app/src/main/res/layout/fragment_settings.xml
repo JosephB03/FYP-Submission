@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="64dp"
+    android:background="?attr/colorPrimary"
+    tools:context=".ui.settings.SettingsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Power Mode"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnPrimary"
+            android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/lowPowerModeSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Low Power Mode"
+            android:textColor="?attr/colorOnPrimary"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Display"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnPrimary"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Confidence Level -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Confidence Level"
+            android:textColor="?attr/colorOnPrimary"
+            android:layout_marginBottom="4dp" />
+
+        <RadioGroup
+            android:id="@+id/confidenceLevelGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <RadioButton
+                android:id="@+id/confidence68"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="68%"
+                android:textColor="?attr/colorOnPrimary"
+                android:checked="true"
+                android:layout_marginEnd="16dp" />
+
+            <RadioButton
+                android:id="@+id/confidence95"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="95%"
+                android:textColor="?attr/colorOnPrimary" />
+        </RadioGroup>
+
+        <!-- Show Uncertainty Radius -->
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/showUncertaintySwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show Uncertainty Radius"
+            android:textColor="?attr/colorOnPrimary"
+            android:checked="true"
+            android:layout_marginBottom="12dp" />
+
+        <!-- User Dot Color -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="User Dot Color"
+                android:textColor="?attr/colorOnPrimary" />
+
+            <View
+                android:id="@+id/userDotColorPreview"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@android:color/holo_blue_dark"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/userDotColorButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:textColor="?attr/colorOnPrimary" />
+        </LinearLayout>
+
+        <!-- Uncertainty Circle Color -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Uncertainty Circle Color"
+                android:textColor="?attr/colorOnPrimary" />
+
+            <View
+                android:id="@+id/uncertaintyColorPreview"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@android:color/holo_red_dark"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/uncertaintyColorButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:textColor="?attr/colorOnPrimary" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Augmentation"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnPrimary"
+            android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/gpsAugmentationSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GPS Augmentation"
+            android:textColor="?attr/colorOnPrimary"
+            android:checked="true"
+            android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/bleAugmentationSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth Peer Augmentation"
+            android:textColor="?attr/colorOnPrimary"
+            android:checked="true"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sensor &amp; Algorithm"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnPrimary"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Complementary Filter Ratio -->
+        <TextView
+            android:id="@+id/filterRatioLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Complementary Filter — Mag: 80% / Gyro: 20%"
+            android:textColor="?attr/colorOnPrimary"
+            android:layout_marginBottom="4dp" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/filterRatioSlider"
+            style="@style/SettingsSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:valueFrom="0.0"
+            android:valueTo="1.0"
+            android:stepSize="0.05"
+            android:value="0.8"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Step Counter Mode -->
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/androidStepCounterSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Use Android Step Counter"
+            android:textColor="?attr/colorOnPrimary"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Gyroscope Sensitivity -->
+        <TextView
+            android:id="@+id/gyroSensitivityLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gyroscope Sensitivity: 0.0025"
+            android:textColor="?attr/colorOnPrimary"
+            android:layout_marginBottom="4dp" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/gyroSensitivitySlider"
+            style="@style/SettingsSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:valueFrom="0.0"
+            android:valueTo="0.01"
+            android:stepSize="0.0005"
+            android:value="0.0025"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Step Counter EMA Alpha -->
+        <TextView
+            android:id="@+id/emaAlphaLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Step Counter EMA Alpha: 0.15"
+            android:textColor="?attr/colorOnPrimary"
+            android:layout_marginBottom="4dp" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/emaAlphaSlider"
+            style="@style/SettingsSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:valueFrom="0.05"
+            android:valueTo="0.50"
+            android:stepSize="0.05"
+            android:value="0.15"
+            android:layout_marginBottom="12dp" />
+
+        <!-- GPS Nudge Factor -->
+        <TextView
+            android:id="@+id/gpsNudgeLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GPS Nudge Factor: 0.30"
+            android:textColor="?attr/colorOnPrimary"
+            android:layout_marginBottom="4dp" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/gpsNudgeSlider"
+            style="@style/SettingsSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:valueFrom="0.0"
+            android:valueTo="1.0"
+            android:stepSize="0.05"
+            android:value="0.3"
+            android:layout_marginBottom="12dp" />
+
+        <!-- BLE Nudge Factor -->
+        <TextView
+            android:id="@+id/bleNudgeLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BLE Nudge Factor: 0.20"
+            android:textColor="?attr/colorOnPrimary"
+            android:layout_marginBottom="4dp" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/bleNudgeSlider"
+            style="@style/SettingsSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:valueFrom="0.0"
+            android:valueTo="1.0"
+            android:stepSize="0.05"
+            android:value="0.2"
+            android:layout_marginBottom="16dp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.debug.DebugFragment"
+    android:background="?attr/colorPrimary">
+
+    <Button
+        android:id="@+id/stepDebugButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Step Debugging"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="?attr/colorAccent"
+        android:textColor="?attr/colorOnSecondary"/>
+
+    <Button
+        android:id="@+id/directionDebugButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Direction Debugging"
+        app:layout_constraintTop_toBottomOf="@id/stepDebugButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="?attr/colorAccent"
+        android:textColor="?attr/colorOnSecondary"/>
+
+    <Button
+        android:id="@+id/strideDebugButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stride Length Debugging"
+        app:layout_constraintTop_toBottomOf="@id/directionDebugButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="?attr/colorAccent"
+        android:textColor="?attr/colorOnSecondary"/>
+
+    <Button
+        android:id="@+id/movementDebugButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Movement Test"
+        app:layout_constraintTop_toBottomOf="@id/strideDebugButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="?attr/colorAccent"
+        android:textColor="?attr/colorOnSecondary"/>
+
+    <Button
+        android:id="@+id/localcoordinateDebugButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ground Truth Test"
+        app:layout_constraintTop_toBottomOf="@id/movementDebugButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="?attr/colorAccent"
+        android:textColor="?attr/colorOnSecondary"/>
+
+    <Button
+        android:id="@+id/peerAugmentationDebugButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Peer Augmentation Test"
+        app:layout_constraintTop_toBottomOf="@id/localcoordinateDebugButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="?attr/colorAccent"
+        android:textColor="?attr/colorOnSecondary"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
